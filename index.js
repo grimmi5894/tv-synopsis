@@ -1,3 +1,4 @@
+const { request } = require('express')
 const express = require('express')
 
 const showdata = require('./showdata')
@@ -7,8 +8,11 @@ const app = express()
 app.set('view engine', 'pug')
 app.use(express.static('public'))
 
+app.get('/', (request, response) => {
+  return response.render('index', { showdata })
+})
 
-app.all('/*', (request, response) => {
+app.all('*', (request, response) => {
   return response.sendStatus(404)
 })
 
