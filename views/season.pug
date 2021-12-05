@@ -3,4 +3,16 @@ html
   body 
     h1 title 
     div(class="season")= `Season ${season.number}`
-    
+
+    table 
+      tr 
+        th Number 
+        th Title 
+        th Directior 
+      for episode in season.episodes 
+        tr 
+          td= episode.number 
+          td= episode.title 
+          td= episode.director 
+        tr 
+          td(colspan=3)= episode.synopsis 
