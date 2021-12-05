@@ -20,3 +20,33 @@ a:visited {
   margin-bottom: 20px;
   text-align: center;
 }
+
+table {
+  margin: 0 auto;
+  width: 85%;
+}
+
+table, th, td {
+  border: 2px solid black;
+  border-collapse: collapse;
+}
+
+th {
+  background-color: aqua;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+th, td {
+  padding: 6px;
+}
+
+.number {
+  text-align: center;
+  width: 5%;
+}
+
+.title, .director {
+  padding-left: 20px;
+}
