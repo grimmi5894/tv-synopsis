@@ -1,3 +1,4 @@
+const { request, response } = require('express')
 const express = require('express')
 
 const showdata = require('./showdata')
@@ -9,6 +10,12 @@ app.use(express.static('public'))
 
 app.get('/', (request, response) => {
   return response.render('index', { showdata })
+})
+
+app.get('/season/:id', (request, response) => {
+  const season = showdata.seasons.find(season => season.number === parseInt(request.params.id))
+
+  return response.render('season', { season, title: showdata.title })
 })
 
 app.all('*', (request, response) => {
